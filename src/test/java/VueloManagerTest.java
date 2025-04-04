@@ -37,21 +37,21 @@ public class VueloManagerTest {
 
 
     @Test
-    public void testAddVuelo() {
+    public void testAddVuelo() { //me va, habia una funcion duplicada y la he eliminado
         vueloManager.addVuelo("V3", "18:00", "20:00", "A1", "Madrid", "Barcelona");
         Vuelo vuelo = vueloManager.getVuelo("V3");
         Assert.assertEquals("Madrid", vuelo.getOrigen());
         Assert.assertEquals("Barcelona", vuelo.getDestino());
     }
 
-    @Test
+    @Test //ya funciona
     public void testGetAllVuelos() {
         List<Vuelo> vuelos = vueloManager.getAllVuelos();
         Assert.assertEquals(2, vuelos.size());
     }
 
 
-    @Test
+    @Test //YA FUNCIONA 
     public void testMaletasRetrievalOrder() {
         vueloManager.facturarMaleta("V1", "User1");
         vueloManager.facturarMaleta("V1", "User2");

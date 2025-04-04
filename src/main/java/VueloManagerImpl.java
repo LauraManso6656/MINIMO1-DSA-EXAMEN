@@ -70,14 +70,11 @@ public class VueloManagerImpl implements VueloManager {
         }
     }
 
+
+
     @Override
     public void facturarMaleta(String vueloId, String userId) {
-
-    }
-
-    @Override
-    public void facturarMaleta(String Id, String userId, String vueloId) {
-        logger.info("Inicio de facturarMaleta: userId=" + userId + ", vueloId=" + vueloId);
+        logger.info("Inicio de facturarMaleta: vueloId=" + vueloId + ", userId=" + userId);
 
         Vuelo vuelo = vuelos.get(vueloId);
         if (vuelo == null) {
@@ -92,6 +89,10 @@ public class VueloManagerImpl implements VueloManager {
         logger.info("Maleta facturada: " + maleta);
     }
 
+    @Override
+    public void facturarMaleta(String Id, String userId, String vueloId) {
+
+    }
 
 
     @Override
@@ -136,7 +137,11 @@ public class VueloManagerImpl implements VueloManager {
 
     @Override
     public List<Vuelo> getAllVuelos() {
-        return List.of();
+
+        logger.info("Inicio de getAllVuelos");
+        List<Vuelo> vuelosList = new ArrayList<>(vuelos.values());
+        logger.info("Vuelos encontrados: " + vuelosList.size());
+        return vuelosList;
     }
 
     @Override

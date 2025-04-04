@@ -13,13 +13,13 @@ public class Vuelo {
 
 
 
-    //private int capacidadMaletas;
+
 
     public Vuelo() {
     }
 
     public Vuelo(String id, String horaSalida, String horaLlegada,
-                 String avionAsignado, String origen, String destino, int capacidadMaletas) {
+                 String avionAsignado, String origen, String destino) {
         this.id = id;
         this.horaSalida = horaSalida;
         this.horaLlegada = horaLlegada;
@@ -29,8 +29,7 @@ public class Vuelo {
 
     }
 
-    public Vuelo(String id, String horaSalida, String horaLlegada, String idAvion, String origen, String destino) {
-    }
+
 
     public String getId() {
         return id;
