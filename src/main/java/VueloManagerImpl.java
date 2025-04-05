@@ -95,6 +95,7 @@ public class VueloManagerImpl implements VueloManager {
     }
 
 
+
     @Override
     public List<Maleta> getMaletasByVuelo(String vueloId) {
         logger.info("Inicio de getMaletasByVuelo: vueloId=" + vueloId);
@@ -146,6 +147,18 @@ public class VueloManagerImpl implements VueloManager {
 
     @Override
     public void deleteVuelo(String vueloId) {
+        logger.info("Inicio de deleteVuelo: vueloId=" + vueloId);
+
+        // Verificar si el vuelo existe
+        Vuelo vuelo = vuelos.get(vueloId);
+        if (vuelo == null) {
+            logger.error("Error: el vuelo con ID " + vueloId + " no existe.");
+            throw new IllegalArgumentException("El vuelo con ID " + vueloId + " no existe.");
+        }
+
+        // Eliminar el vuelo del mapa
+        vuelos.remove(vueloId);
+        logger.info("Vuelo con ID " + vueloId + " eliminado exitosamente.");
 
     }
 
